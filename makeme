@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+
+import os
+import shutil
+import argparse
+
+def get_template_path():
+    # Default template path is ~/.makeme_template
+    home = os.path.expanduser("~")
+    return os.path.join(home, ".makeme_template")
+
+def copy_makefile(overwrite=False):
+    template_path = get_template_path()
+    destination = os.path.join(os.getcwd(), "Makefile")
+
+    # Check if template exists
+    if not os.path.exists(template_path):
+        print(f"Error: Makefile template not found at {template_path}")
+        print("Please create a .makeme_template file in your home directory.")
+        return
+
+    # Check if Makefile already exists in cwd
+    if os.path.exists(destination) and not overwrite:
+        response = input("Makefile already exists in current directory. Overwrite? (y/n): ").lower()
+        if response != 'y':
+            print("Aborted: Makefile not copied.")
+            return
+
+    # Copy the template to cwd
+    try:
+        shutil.copyfile(template_path, destination)
+        print(f"Makefile Created!")
+    except Exception as e:
+        print(f"Error copying Makefile: {e}")
+
+def main():
+    parser = argparse.ArgumentParser(description="Copy a Makefile template to the current directory.")
+    parser.add_argument("--force", "-f", action="store_true", help="Overwrite existing Makefile without prompting")
+    args = parser.parse_args()
+
+    copy_makefile(overwrite=args.force)
+
+if __name__ == "__main__":
+    main()
