@@ -1,15 +1,22 @@
-# Command to create default Makefile
+# 🛠️ makeme - Simple Makefile Generator for C++
 
-# Install Guide
+Use a single command to import a default Makefile into your project directory from a reusable template.
 
-Place .makeme_temaplate in /home/${name}/
-Place makeme in /usr/local/bin
+## 📦 Install
 
-In the directory you need a Makefile run
+```bash
+git clone https://github.com/yourname/makeme
+cd makeme
+chmod +x install.sh
+./install.sh
+```
+
+
+## Usage
 ```
 makeme
 ```
 
-
-
+## Configuration
+The template is stored at `~/.makeme_template`. You can edit this to fit your preferred defaults.
 
