@@ -1,4 +1,4 @@
-# 🛠️ makeme - Simple Makefile Generator for C++
+# 🛠️ makeme - Simple Makefile Generator for C++ on Linux
 
 Use a single command to import a default Makefile into your project directory from a reusable template.
 
