@@ -5,7 +5,7 @@ Use a single command to import a default Makefile into your project directory fr
 ## 📦 Install
 
 ```bash
-git clone https://github.com/cw-0/makeme
+git clone https://github.com/cw-0/Makefile-Creator
 cd makeme
 chmod +x install.sh
 ./install.sh
