@@ -2,7 +2,7 @@ CXX := g++
 CXXFLAGS := -std=c++20 -Wall -Wextra -O0
 
 
-DLLS := libwinpthread-1.dll libgcc_s_seh-1.dll libstdc++-6.dll
+DLLS := libatomic-1.dll libgcc_s_seh-1.dll libssp-0.dll libwinpthread-1.dll
 DLL_PATH := /usr/x86_64-w64-mingw32/sys-root/mingw/bin/
 WINDOWS_CXX := x86_64-w64-mingw32-g++
 
